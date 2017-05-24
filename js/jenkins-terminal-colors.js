@@ -1,6 +1,8 @@
 $(document).ready(function() {
     function transformText(text) {
         text = text.replace(/\[0m/g, "</span>");
+        text = text.replace(/\[2K/g, "");
+        text = text.replace(/\[A\s/g, "");
         text = text.replace(/\[([0-9;]+)m/g, function (match, code, offset, string) {
             return "<span class='jtc-" + code.replace(/;/g, ' jtc-') + "'>";
         });
